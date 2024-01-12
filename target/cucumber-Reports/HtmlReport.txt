@@ -1,0 +1,45 @@
+
+@Smoke @Sanity
+Scenario: Sucessful Login with Valid Credentials                                      # features/Login.feature:4
+  Given User Launch Chrome Browser                                                    # Stepdefinition.StepDefinition.user_launch_chrome_browser()
+  When User Open URL "https://admin-demo.nopcommerce.com/login?ReturnUrl=%2Fadmin%2F" # Stepdefinition.StepDefinition.user_open_url(java.lang.String)
+  And User enters Email as "admin@yourstore.com" and Password as "admin"              # Stepdefinition.StepDefinition.user_enters_email_as_and_password_as(java.lang.String,java.lang.String)
+  And Click on Login                                                                  # Stepdefinition.StepDefinition.click_on_login()
+  Then Page title should be "Dashboard / nopCommerce administration"                  # Stepdefinition.StepDefinition.page_title_should_be(java.lang.String)
+  When user click on Logout Link                                                      # Stepdefinition.StepDefinition.user_click_on_logout_link()
+  Then After Logout Page title should be "Your store. Login"                          # Stepdefinition.StepDefinition.after_logout_page_title_should_be(java.lang.String)
+  And close Browser                                                                   # Stepdefinition.StepDefinition.close_browser()
+
+@Smoke
+Scenario: Search Customer by using Email Id                                              # features/SearchCustomer.feature:13
+  Given User Launch Chrome Browser                                                       # Stepdefinition.StepDefinition.user_launch_chrome_browser()
+  When User Open URL "https://admin-demo.nopcommerce.com/login?ReturnUrl=%2Fadmin%2F"    # Stepdefinition.StepDefinition.user_open_url(java.lang.String)
+  And User enters Email as "admin@yourstore.com" and Password as "admin"                 # Stepdefinition.StepDefinition.user_enters_email_as_and_password_as(java.lang.String,java.lang.String)
+  And Click on Login                                                                     # Stepdefinition.StepDefinition.click_on_login()
+  Then Page title should be "Dashboard / nopCommerce administration"                     # Stepdefinition.StepDefinition.page_title_should_be(java.lang.String)
+  When user click on Customers Menu                                                      # Stepdefinition.StepDefinition.user_click_on_customers_menu()
+  And User click on Customer Menu Item                                                   # Stepdefinition.StepDefinition.user_click_on_customer_menu_item()
+  Then After Customer Menu page title should be "Customers / nopCommerce administration" # Stepdefinition.StepDefinition.after_customer_menu_page_title_should_be(java.lang.String)
+  When user enter email id as "james_pan@nopCommerce.com"                                # Stepdefinition.StepDefinition.user_enter_email_id_as(java.lang.String)
+  And User clicks on Search button                                                       # Stepdefinition.StepDefinition.user_clicks_on_search_button()
+  Then User Name should be "James Pan"                                                   # Stepdefinition.StepDefinition.user_name_should_be(java.lang.String)
+  When user click on Logout Link                                                         # Stepdefinition.StepDefinition.user_click_on_logout_link()
+  Then After Logout Page title should be "Your store. Login"                             # Stepdefinition.StepDefinition.after_logout_page_title_should_be(java.lang.String)
+  And close Browser                                                                      # Stepdefinition.StepDefinition.close_browser()
+
+@Sanity
+Scenario: Search Customer by using Name                                                  # features/SearchCustomer.feature:22
+  Given User Launch Chrome Browser                                                       # Stepdefinition.StepDefinition.user_launch_chrome_browser()
+  When User Open URL "https://admin-demo.nopcommerce.com/login?ReturnUrl=%2Fadmin%2F"    # Stepdefinition.StepDefinition.user_open_url(java.lang.String)
+  And User enters Email as "admin@yourstore.com" and Password as "admin"                 # Stepdefinition.StepDefinition.user_enters_email_as_and_password_as(java.lang.String,java.lang.String)
+  And Click on Login                                                                     # Stepdefinition.StepDefinition.click_on_login()
+  Then Page title should be "Dashboard / nopCommerce administration"                     # Stepdefinition.StepDefinition.page_title_should_be(java.lang.String)
+  When user click on Customers Menu                                                      # Stepdefinition.StepDefinition.user_click_on_customers_menu()
+  And User click on Customer Menu Item                                                   # Stepdefinition.StepDefinition.user_click_on_customer_menu_item()
+  Then After Customer Menu page title should be "Customers / nopCommerce administration" # Stepdefinition.StepDefinition.after_customer_menu_page_title_should_be(java.lang.String)
+  When user enter first name as "Virat"                                                  # Stepdefinition.StepDefinition.user_enter_first_name_as(java.lang.String)
+  And User clicks on Search button                                                       # Stepdefinition.StepDefinition.user_clicks_on_search_button()
+  Then User email id should be "kiyjcycyhjc676008@gmail.com"                             # Stepdefinition.StepDefinition.user_email_id_should_be(java.lang.String)
+  When user click on Logout Link                                                         # Stepdefinition.StepDefinition.user_click_on_logout_link()
+  Then After Logout Page title should be "Your store. Login"                             # Stepdefinition.StepDefinition.after_logout_page_title_should_be(java.lang.String)
+  And close Browser                                                                      # Stepdefinition.StepDefinition.close_browser()

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="130.372" tests="3" skipped="0" failures="0" errors="0">
+<testcase classname="Loginpage" name="Sucessful Login with Valid Credentials" time="37.999">
+<system-out><![CDATA[
+Given User Launch Chrome Browser............................................passed
+When User Open URL "https://admin-demo.nopcommerce.com/login?ReturnUrl=%2Fadmin%2F".passed
+And User enters Email as "admin@yourstore.com" and Password as "admin"......passed
+And Click on Login..........................................................passed
+Then Page title should be "Dashboard / nopCommerce administration"..........passed
+When user click on Logout Link..............................................passed
+Then After Logout Page title should be "Your store. Login"..................passed
+And close Browser...........................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Search_Customers" name="Search Customer by using Email Id" time="46.895">
+<system-out><![CDATA[
+Given User Launch Chrome Browser............................................passed
+When User Open URL "https://admin-demo.nopcommerce.com/login?ReturnUrl=%2Fadmin%2F".passed
+And User enters Email as "admin@yourstore.com" and Password as "admin"......passed
+And Click on Login..........................................................passed
+Then Page title should be "Dashboard / nopCommerce administration"..........passed
+When user click on Customers Menu...........................................passed
+And User click on Customer Menu Item........................................passed
+Then After Customer Menu page title should be "Customers / nopCommerce administration".passed
+When user enter email id as "james_pan@nopCommerce.com".....................passed
+And User clicks on Search button............................................passed
+Then User Name should be "James Pan"........................................passed
+When user click on Logout Link..............................................passed
+Then After Logout Page title should be "Your store. Login"..................passed
+And close Browser...........................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Search_Customers" name="Search Customer by using Name" time="44.666">
+<system-out><![CDATA[
+Given User Launch Chrome Browser............................................passed
+When User Open URL "https://admin-demo.nopcommerce.com/login?ReturnUrl=%2Fadmin%2F".passed
+And User enters Email as "admin@yourstore.com" and Password as "admin"......passed
+And Click on Login..........................................................passed
+Then Page title should be "Dashboard / nopCommerce administration"..........passed
+When user click on Customers Menu...........................................passed
+And User click on Customer Menu Item........................................passed
+Then After Customer Menu page title should be "Customers / nopCommerce administration".passed
+When user enter first name as "Virat".......................................passed
+And User clicks on Search button............................................passed
+Then User email id should be "kiyjcycyhjc676008@gmail.com"..................passed
+When user click on Logout Link..............................................passed
+Then After Logout Page title should be "Your store. Login"..................passed
+And close Browser...........................................................passed
+]]></system-out>
+</testcase>
+</testsuite>
